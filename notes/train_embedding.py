@@ -50,5 +50,6 @@ print(model.get_weights()[0][0]) # output: [-0.04778028 -0.13333663  0.00935533 
 # 预测
 res = model.predict_classes(x_test)
 
-print(accuracy_score(y_test, res)) # output: print(accuracy_score(y_test, res))
+print(accuracy_score(y_test, res)) # 0.76388
+
 
