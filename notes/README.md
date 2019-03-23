@@ -1,4 +1,4 @@
-# 对于RNN相关知识的总结
+    # 对于RNN相关知识的总结
 ## one hot编码
 [one hot encode](https://github.com/wgq1995/nlp/blob/master/notes/one_hot.py)
 
@@ -21,4 +21,7 @@
 [how does simple RNN work](https://github.com/wgq1995/nlp/blob/master/notes/myRNN.py)
 
 ## RNN, LSTM, GRU中的参数计算
+    SimpleRNN: output_size × （input_size + output_size + 1)
+    LSTM: 4 × (input_size + output_size + 1) × output_size
+    GRU: 3 × (output_size + input_size + 1) × output_size
 [how many params in RNN layer](https://github.com/wgq1995/nlp/blob/master/notes/understand_RNN)
