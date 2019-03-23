@@ -49,3 +49,29 @@ Non-trainable params: 0
 _________________________________________________________________
 lstm参数说明： 4 * (input_size + output_size + 1) * output_size
 """
+
+# GRU
+input_size = 22
+output_size = 15
+res = 3 * (output_size + input_size + 1) * output_size
+print(res)
+
+model = Sequential()
+model.add(Embedding(1000, input_size, input_length=15))
+model.add(GRU(output_size,))
+model.summary()
+"""
+1710
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+embedding_1 (Embedding)      (None, 15, 22)            22000     
+_________________________________________________________________
+gru_1 (GRU)                  (None, 15)                1710      
+=================================================================
+Total params: 23,710
+Trainable params: 23,710
+Non-trainable params: 0
+_________________________________________________________________
+GRU参数： 3 * (output_size + input_size + 1) * output_size
+"""
