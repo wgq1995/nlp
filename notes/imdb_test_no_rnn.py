@@ -114,7 +114,7 @@ model.layers[0].set_weights([embedding_matrix])
 model.layers[0].trainable = False
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['acc'])
 history = model.fit(x_train, y_train, epochs=5, batch_size=64, validation_data=(x_val, y_val))
-“”“
+"""
 Train on 15000 samples, validate on 10000 samples
 Epoch 1/5
 15000/15000 [==============================] - 1s - loss: 0.6176 - acc: 0.6552 - val_loss: 0.5744 - val_acc: 0.6956
@@ -126,7 +126,7 @@ Epoch 4/5
 15000/15000 [==============================] - 1s - loss: 0.4303 - acc: 0.7985 - val_loss: 0.5974 - val_acc: 0.6913
 Epoch 5/5
 15000/15000 [==============================] - 1s - loss: 0.3757 - acc: 0.8311 - val_loss: 0.6470 - val_acc: 0.6874
-“”“
+"""
 test_pre = model.predict_classes(x_test)
 print(accuracy_score(y_test, test_pre))
 # output: 0.80904
