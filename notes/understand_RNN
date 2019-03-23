@@ -1,0 +1,26 @@
+from keras.models import Sequential
+from keras.layers import Embedding, SimpleRNN
+
+
+model = Sequential()
+model.add(Embedding(1000, 8, input_length=10))
+model.add(SimpleRNN(16, return_sequences=True))
+model.summary()
+"""
+output:
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+embedding_1 (Embedding)      (None, 10, 8)             8000      
+_________________________________________________________________
+simple_rnn_1 (SimpleRNN)     (None, 10, 16)            400       
+=================================================================
+Total params: 8,400
+Trainable params: 8,400
+Non-trainable params: 0
+_________________________________________________________________
+参数说明：
+embedding: 8000 = 1000 × 8
+simpleRNN: 400 = 8 × 16 + 16 × 16 + 16
+return_sequences： 是否返回序列，如果是False的话，就返回最后一个时间步的输出
+"""
