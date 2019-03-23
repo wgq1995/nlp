@@ -1,9 +1,12 @@
 # 对于RNN相关知识的总结
 ## one hot编码([one hot encode](https://github.com/wgq1995/nlp/blob/master/notes/one_hot.py))
+主要测试tokenizer的相关功能，并自己实现一个类似的功能
 
 ## 在具体任务中训练embedding([train my embedding](https://github.com/wgq1995/nlp/blob/master/notes/train_embedding.py))
+只要引入Embedding层，定义任务训练即可
 
 ## 对于pad_sequences的测试([how does pad_sequences work](https://github.com/wgq1995/nlp/blob/master/notes/pad_sequences.py))
+补全或者截断时，可以选择从前（pre)或者从后(post)开始
 
 ## 简单全连接层的文本分类([use pre_trained embedding but no RNN](https://github.com/wgq1995/nlp/blob/master/notes/imdb_test_no_rnn.py))
     pipeline:
