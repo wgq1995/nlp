@@ -1,7 +1,7 @@
 from keras.models import Sequential
-from keras.layers import Embedding, SimpleRNN
+from keras.layers import Embedding, SimpleRNN, LSTM
 
-
+# simpleRNN
 model = Sequential()
 model.add(Embedding(1000, 8, input_length=10))
 model.add(SimpleRNN(16, return_sequences=True))
@@ -21,6 +21,31 @@ Non-trainable params: 0
 _________________________________________________________________
 参数说明：
 embedding: 8000 = 1000 × 8
-simpleRNN: 400 = 8 × 16 + 16 × 16 + 16
+simpleRNN: 400 = 8 × 16 + 16 × 16 + 16 = output_size × （input_size + output_size + 1)
 return_sequences： 是否返回序列，如果是False的话，就返回最后一个时间步的输出
+"""
+
+# LSTM
+input_size = 15
+output_size = 24
+res = 4 * (input_size + output_size + 1) * output_size
+print(res)
+model = Sequential()
+model.add(Embedding(1000, input_size, input_length=15))
+model.add(LSTM(output_size,))
+model.summary()
+"""
+3840
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+embedding_1 (Embedding)      (None, 15, 15)            15000     
+_________________________________________________________________
+lstm_1 (LSTM)                (None, 24)                3840      
+=================================================================
+Total params: 18,840
+Trainable params: 18,840
+Non-trainable params: 0
+_________________________________________________________________
+lstm参数说明： 4 * (input_size + output_size + 1) * output_size
 """
