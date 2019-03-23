@@ -6,6 +6,17 @@
 ## 对于pad_sequences的测试([how does pad_sequences work](https://github.com/wgq1995/nlp/blob/master/notes/pad_sequences.py))
 
 ## 简单全连接层的文本分类([use pre_trained embedding but no RNN](https://github.com/wgq1995/nlp/blob/master/notes/imdb_test_no_rnn.py))
+    pipeline:
+    1. load data
+    2. data_prepare
+        2.1 tokenizer.fit_on_texts: 获取出现频率最高的max_words个单词
+        2.2 tokenizer.texts_to_sequences: 将单词转变为单词对应索引
+        2.3 tokenizer.word_index: 获取单词～索引对应字典，例如：{'cat':1, 'dog':2}
+        2.4 pad_sequences: 将句子截取/补全到预定的长度
+    3. load embeddings
+        3.1 embeddings_index: 单词和对应词向量，例如：{‘cat':[0.1, 0.2, 0.1]. 'dog':['0.2', '0.5', '0.1']}
+        3.2 embeddings_matrix: 词向量表，将单词按2.3中的word_index中的索引填到矩阵对应位置上去，注意，索引为0的位置是没有单词的
+    4. build model and train 
 
 ## 实现一个简单RNN的前向传播([how does simple RNN work](https://github.com/wgq1995/nlp/blob/master/notes/myRNN.py))
     RNN 伪代码：
