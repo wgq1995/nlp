@@ -21,7 +21,7 @@
         3.2 embeddings_matrix: 词向量表，将单词按2.3中的word_index中的索引填到矩阵对应位置上去，注意，索引为0的位置是没有单词的
     4. build model and train 
 ## 用LSTM实现文本分类([use LSTM](https://github.com/wgq1995/nlp/blob/master/notes/LSTM_example.py))
-    数据准备和全连接网络进行分类一样，后面将模型添加一个LSTM层
+    数据准备和全连接网络进行分类一样，后面将模型添加一个LSTM层, 可以用Bidirection将单向的变成双向的LSTM
 
 ## 实现一个简单RNN的前向传播([how does simple RNN work](https://github.com/wgq1995/nlp/blob/master/notes/myRNN.py))
     RNN 伪代码：
