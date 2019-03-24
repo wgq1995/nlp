@@ -4,7 +4,7 @@ from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 import numpy as np
 from keras.models import Sequential
-from keras.layers import Embedding, LSTM, Dense
+from keras.layers import Embedding, LSTM, Dense, Bidirectional
 from sklearn.metrics import accuracy_score
 
 
@@ -108,7 +108,7 @@ embedding_matrix = get_embedding_matrix(embeddings_index, word_index, max_words,
 # build model
 model = Sequential()
 model.add(Embedding(max_words, embeddings_dim, input_length=max_len))
-model.add(LSTM(32))
+model.add(Bidirectional(LSTM(32)))
 model.add(Dense(32, activation='relu'))
 model.add(Dense(1, activation='sigmoid'))
 
