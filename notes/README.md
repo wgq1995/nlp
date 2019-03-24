@@ -35,4 +35,5 @@
 * SimpleRNN: output_size × （input_size + output_size + 1)
 * LSTM: 4 × (input_size + output_size + 1) × output_size
 * GRU: 3 × (output_size + input_size + 1) × output_size
+ps: 双向的话就是单向单元的两倍参数
 
