@@ -109,6 +109,7 @@ embedding_matrix = get_embedding_matrix(embeddings_index, word_index, max_words,
 model = Sequential()
 model.add(Embedding(max_words, embeddings_dim, input_length=max_len))
 model.add(LSTM(32))
+model.add(Dense(32, activation='relu'))
 model.add(Dense(1, activation='sigmoid'))
 
 model.summary()
