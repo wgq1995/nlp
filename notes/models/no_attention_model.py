@@ -1,7 +1,6 @@
 from keras.layers import Dense, Input, LSTM, Embedding, Dropout, Activation, GRU, Conv1D
 from keras.layers import Bidirectional, GlobalMaxPool1D, GlobalMaxPooling1D, GlobalAveragePooling1D
-from keras.layer
-import Input, Embedding, Dense, Conv2D, MaxPool2D, concatenate
+from keras.layers import Input, Embedding, Dense, Conv2D, MaxPool2D, concatenate
 from keras.layers import Reshape, Flatten, Concatenate, Dropout, SpatialDropout1D
 from keras.models import Model
 from keras import backend as K
