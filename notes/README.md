@@ -5,6 +5,8 @@
         的文档特征向量v向量，然后v向量通过后级dense层再加分类器得到最终的文本分类结果。模型结构非常符合人的从词->句子->再到篇章的理解过程
     类似HAN网络思路：
         输入 --> 词嵌入 --> 双向的LSTM/GRU --> attention/globalmaxpool/globalaveragepool --> 全连接层
+    Text-CNN模型
+        输入 --> 词嵌入 --> CNN + MAXPOOLing --> 全连接层
     
 ## one hot编码([one hot encode](https://github.com/wgq1995/nlp/blob/master/notes/one_hot.py))
 主要测试tokenizer的相关功能，并自己实现一个类似的功能
