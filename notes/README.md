@@ -46,3 +46,5 @@
 * GRU: 3 × (output_size + input_size + 1) × output_size<br>
 ps: 双向的话就是单向单元的两倍参数
 
+## callback的使用（[how to use callback](https://github.com/wgq1995/nlp/blob/master/notes/callback.py))
+    使用checkpoint，earlystop方法，自定义rmse
