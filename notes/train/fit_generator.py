@@ -5,7 +5,6 @@ import keras.backend as k
 from keras.losses import mean_squared_error as mse
 from keras.preprocessing.sequence import pad_sequences
 import random
-from copy import deepcopy
 import numpy as np
 
 
@@ -52,8 +51,8 @@ def my_generator(x, y, batch_size, global_max_len):
     shuffle_data(x, y)
     while True:
         for batch in range(n_batchs):
-            batch_x = deepcopy(x[batch * batch_size: (batch + 1) * batch_size])
-            batch_y = deepcopy(y[batch * batch_size: (batch + 1) * batch_size])
+            batch_x = x[batch * batch_size: (batch + 1) * batch_size]
+            batch_y = y[batch * batch_size: (batch + 1) * batch_size]
             batch_max_len = len(max(batch_x, key=lambda x: len(x)))
             batch_max_len = min(batch_max_len, global_max_len)
             batch_x = pad_sequences(batch_x, batch_max_len)
@@ -85,3 +84,4 @@ model.fit_generator(generator=train_g,
                     epochs=epochs,
                     validation_data=val_g,
                     validation_steps=len(val_y) // train_batch_size)
+
