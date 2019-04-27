@@ -1,3 +1,6 @@
+"""
+变长输入时，每个batch的输入长度不等，加快训练时间
+"""
 from keras.layers import Dense, Embedding, LSTM, Input, GlobalMaxPool1D
 from keras.models import Model
 from keras.losses import mean_squared_error as mse
