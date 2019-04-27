@@ -4,7 +4,8 @@
 from keras.layers import Dense, Embedding, LSTM, Input, GlobalMaxPool1D
 from keras.models import Model
 from keras.losses import mean_squared_error as mse
-from keras.preprocessing.sequence import pad_sequences
+from keras.preprocessing.sequence import pad_sequences, TimeseriesGenerator
+import random
 
 
 inp = Input(shape=(None, ))
@@ -29,6 +30,7 @@ data = [
 y = [1, 2, 3, 4, 5]
 for epoch in range(epochs):
     print("epoch {}:".format(epoch))
+    random.shuffle(data)
     for i in range(0, len(data), batch_size):
         cur_data = data[i:i+batch_size]
         cur_y = y[i:i+batch_size]
